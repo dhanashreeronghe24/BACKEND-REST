@@ -9,7 +9,7 @@ In order to set up a DB environment,
 ### Step 2
 Execute following commands to run this project.
 #### Development server
-Run `npm run start-ts` for a dev server. Navigate to `http://localhost:3000/`. 
+Run `npm run start-ts` for a dev server. Navigate to `http://localhost:3000/employee`. 
 
 ### Step 3
 Test APIs using Postman.
