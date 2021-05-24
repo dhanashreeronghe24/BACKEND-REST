@@ -1,4 +1,4 @@
-## This project has been created for testing purpose 
+## This project has been created for testing purposes 
 
 ### Step 1
 In order to set up a DB environment, 
