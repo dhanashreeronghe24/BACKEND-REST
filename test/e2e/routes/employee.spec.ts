@@ -22,7 +22,7 @@ describe("e2eTESTS - Employee CRUD", ()=>{
       server = createServer(app);
     })
 
-    it('should create an employee', async () => {
+    it('Add an employee', async () => {
         //arrange
         const expectedEmployee: Employee = fakeEmployeeRequest;
         const req = supertest(server);
@@ -38,7 +38,7 @@ describe("e2eTESTS - Employee CRUD", ()=>{
     
       })
 
-      it('should delete an employee', async () => {
+      it('Delete an employee', async () => {
         //arrange
         const req = supertest(server);
     
