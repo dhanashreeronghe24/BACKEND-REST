@@ -16,6 +16,6 @@ export async function connectDB() {
         .catch((err) => { console.log(err) })
 }
 
-export const closeInMongodConnection = async () => {
+export const closeDBConnection = async () => {
     await mongoose.disconnect();
 };
