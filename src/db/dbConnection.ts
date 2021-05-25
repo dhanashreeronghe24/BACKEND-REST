@@ -10,7 +10,7 @@ export async function connectDB() {
         poolSize:10
     };
     await mongoose.connect(
-        'mongodb+srv://<your_db_user>:<your_DB_password>@<your_mongo_DB_cluster>.typix.mongodb.net/<your_db_name>?wretryWrites=true&w=majority'
+        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER_NAME}/${process.env.DB_NAME}?retryWrites=true&w=majority`
         , options)
         .then(() => { console.log("Connected to Atlas!") })
         .catch((err) => { console.log(err) })

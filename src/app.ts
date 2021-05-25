@@ -2,8 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import empRouter from "./routes/employee";
 import { connectDB } from './db/dbConnection';
+import { config } from 'dotenv';
 
 export default async function init(){
+    config();
     await connectDB();
     const app = express();
     
