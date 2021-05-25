@@ -17,12 +17,12 @@ describe("e2eTESTS - Employee CRUD", ()=>{
       empContact: "+1 234 56765 7"
     }
 
-    beforeEach( async ()=>{
-        app = await init();
-        server = createServer(app);
+    beforeEach( async()=>{
+      app = await init();
+      server = createServer(app);
     })
 
-    it('should create emp', async () => {
+    it('should create an employee', async () => {
         //arrange
         const expectedEmployee: Employee = fakeEmployeeRequest;
         const req = supertest(server);
@@ -35,6 +35,19 @@ describe("e2eTESTS - Employee CRUD", ()=>{
         expect(res.status).toEqual(200);
         generatedId = res.body?._id;
         expect(res.body?.empId).toEqual(expectedEmployee.empId);
+    
+      })
+
+      it('should delete an employee', async () => {
+        //arrange
+        const req = supertest(server);
+    
+        // act
+        let res = await req.delete(`/employee/${generatedId}`);
+    
+        // assert
+        expect(res.status).toEqual(200);
+        expect(res.body?.deletedCount).toEqual(1);
     
       })
 
