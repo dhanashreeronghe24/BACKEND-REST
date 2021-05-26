@@ -37,6 +37,19 @@ describe("e2eTESTS - Employee CRUD", ()=>{
         expect(res.body?.empId).toEqual(expectedEmployee.empId);
     
       })
+      
+      it('should fetch an employee by id', async () => {
+        //arrange
+        const req = supertest(server);
+    
+        // act
+        let res = await req.get(`/employee/${generatedId}`);
+    
+        // assert
+        expect(res.status).toEqual(200);
+        expect(res.body?.empId).toEqual(fakeEmployeeRequest.empId);
+    
+      })
 
       it('Delete an employee', async () => {
         //arrange
