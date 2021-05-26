@@ -5,7 +5,7 @@ const empRouter = express.Router();
 empRouter.get('/', getAllEmployees);
 empRouter.get('/:_id', getEmployeeById)
 empRouter.post('/', addEmployee);
-empRouter.put('/:_id', updateEmployee)
+empRouter.patch('/:_id', updateEmployee)
 empRouter.delete('/:_id', deleteEmployee)
 
 

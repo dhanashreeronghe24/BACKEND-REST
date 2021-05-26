@@ -1,5 +1,6 @@
 import { Express } from 'express';
 import { createServer, Server } from 'http';
+import faker from 'faker';
 import supertest from 'supertest';
 import init from '../../../src/app';
 import { closeDBConnection } from '../../../src/db/dbConnection';
@@ -11,10 +12,10 @@ describe("e2eTESTS - Employee CRUD", () => {
   let server: Server;
   let generatedId: string;
   let fakeEmployeeRequest: Employee = {
-    empId: "e3",
-    empName: "Sarah",
-    empDOB: "24-07-1995",
-    empContact: "+1 234 56765 7"
+    empId: faker.random.alphaNumeric(),
+    empName: faker.name.findName(),
+    empDOB: faker.date.past().toDateString(),
+    empContact: faker.phone.phoneNumber()
   }
 
   beforeEach(async () => {
@@ -52,14 +53,11 @@ describe("e2eTESTS - Employee CRUD", () => {
   it('Update an employee', async () => {
     //arrange
     const req = supertest(server);
-    fakeEmployeeRequest.empId = "e3"
-    fakeEmployeeRequest.empName = "Sarah update";
-    fakeEmployeeRequest.empContact = "+1 234 56765 8";
-    fakeEmployeeRequest.empDOB = "24-07-1995";
+    fakeEmployeeRequest.empName = "This record has been updated using unit tests";
     let expectedEmployee: Employee = fakeEmployeeRequest;
 
     // act
-    let res = await req.put(`/employee/${generatedId}`).send(expectedEmployee);
+    let res = await req.patch(`/employee/${generatedId}`).send(expectedEmployee);
 
     // assert
     expect(res.status).toEqual(200);
