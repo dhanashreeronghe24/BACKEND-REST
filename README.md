@@ -14,3 +14,5 @@ Run `npm run start-ts` for a dev server. Navigate to `http://localhost:3000/empl
 ### Step 3
 Test APIs using Postman.
 
+Note: For e2e Jest Tests run `npm run test` 
+
