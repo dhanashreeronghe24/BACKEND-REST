@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import Employee from '../types/employee';
 
 const addEmployee = new Schema({
     empId: {
@@ -17,4 +18,4 @@ const addEmployee = new Schema({
     }
 }
 )
-export default model("employee", addEmployee);
+export default model<Employee>("employee", addEmployee);

@@ -11,7 +11,7 @@ describe("e2eTESTS - Employee CRUD", () => {
   let app: Express;
   let server: Server;
   let generatedId: string;
-  let fakeEmployeeRequest: Employee = {
+  let fakeEmployeeRequest = {
     empId: faker.random.alphaNumeric(),
     empName: faker.name.findName(),
     empDOB: faker.date.past().toDateString(),
@@ -25,7 +25,7 @@ describe("e2eTESTS - Employee CRUD", () => {
 
   it('Add an employee', async () => {
     //arrange
-    const expectedEmployee: Employee = fakeEmployeeRequest;
+    const expectedEmployee = fakeEmployeeRequest;
     const req = supertest(server);
 
     // act
@@ -54,7 +54,7 @@ describe("e2eTESTS - Employee CRUD", () => {
     //arrange
     const req = supertest(server);
     fakeEmployeeRequest.empName = "This record has been updated using unit tests";
-    let expectedEmployee: Employee = fakeEmployeeRequest;
+    let expectedEmployee = fakeEmployeeRequest;
 
     // act
     let res = await req.patch(`/employee/${generatedId}`).send(expectedEmployee);
@@ -78,6 +78,6 @@ describe("e2eTESTS - Employee CRUD", () => {
 
   afterAll(async () => {
     await closeDBConnection();
-  })
+  }) 
 
 });
