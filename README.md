@@ -1,4 +1,4 @@
-## This project has been created for testing purposes 
+## REST APIs - Node.js/typescript + Express + MongoDB + Jest (testing framework)   
 
 ### Step 1
 In order to set up a DB environment, 
