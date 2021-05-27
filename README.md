@@ -4,10 +4,10 @@
 In order to set up a DB environment, 
 - Please sign up & create a DB cluster using Mongo DB Atlas Console. 
 - Create a test database.
-- Configure DB connection uri with your DB username & password in dbConnection.ts file in the project. 
+- Create ".env" file in the root directory and add DB-connection parameters (DB_USER, DB_PASSWORD, DB_CLUSTER_NAME, DB_NAME). 
 
 ### Step 2
-Execute following commands to run this project.
+Execute the following commands to run this project.
 - Run `npm install` to install dependencies.
 - Run `npm run start-ts` for a dev server. 
 
@@ -16,4 +16,6 @@ Execute following commands to run this project.
 - Other API endpoints can be tested using Postman.
 
 Note: For unit/e2e tests run `npm run test`. 
+
+🙂
 
