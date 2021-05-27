@@ -8,11 +8,12 @@ In order to set up a DB environment,
 
 ### Step 2
 Execute following commands to run this project.
-#### Development server
-Run `npm run start-ts` for a dev server. Navigate to `http://localhost:3000/employee`. 
+- Run `npm install` to install dependencies.
+- Run `npm run start-ts` for a dev server. 
 
 ### Step 3
-Test APIs using Postman.
+- Navigate to http://localhost:3000/employee to get list of employees.
+- Other API endpoints can be tested using Postman.
 
-Note: For e2e Jest Tests run `npm run test` 
+Note: For unit/e2e tests run `npm run test`. 
 
