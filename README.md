@@ -13,7 +13,7 @@ Execute the following commands to run this project.
 
 ### Step 3
 - Navigate to http://localhost:3000/employee to get list of employees.
-- Other API endpoints can be tested using Postman.
+- Other API endpoints can be tested using a tool like Postman.
 
 Note: For unit/e2e tests run `npm run test`. 
 
