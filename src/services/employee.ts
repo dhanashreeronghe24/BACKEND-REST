@@ -17,7 +17,7 @@ export default class EmployeeService {
 
     async createEmp(emp: Employee) {
         console.log("An Employee is being created..")
-        return await emp.save();
+        return await employee.create(emp);
     }
 
     async updateEmp(id: any, emp: Employee) {
